@@ -7,16 +7,8 @@ const { log } = require("node:console");
 const app = express();
 app.use(cors({ origin: "*" }));
 app.use(express.json());
-console.log("DB HOST:", process.env.MYSQLHOST);
-const pool = mysql.createPool({
-  host: process.env.MYSQLHOST,
-  user: process.env.MYSQLUSER,
-  password: process.env.MYSQLPASSWORD,
-  database: process.env.MYSQLDATABASE,
-  port: process.env.MYSQLPORT,
-  waitForConnections: true,
-  connectionLimit: 10
-});
+
+const pool = mysql.createPool("mysql://root:yLgTMvLKHklUmcfEJpcCrLYwrssqxoXv@autorack.proxy.rlwy.net:10033/railway");
 
 app.post("/create", create);
 app.post("/remove", remove);
