@@ -63,7 +63,7 @@ async function create(req, res) {
     console.log("db error", e);
     return res
       .status(500)
-      .json({ ok: false, message: "Internal server error" });
+      .json({ ok: false, message: "Internal server error", e});
   }
 }
 
