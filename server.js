@@ -7,7 +7,7 @@ const { log } = require("node:console");
 const app = express();
 app.use(cors({ origin: "*" }));
 app.use(express.json());
-
+console.log("DB HOST:", process.env.MYSQLHOST);
 const pool = mysql.createPool({
   host: process.env.MYSQLHOST,
   user: process.env.MYSQLUSER,
