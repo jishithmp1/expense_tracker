@@ -60,7 +60,7 @@ async function create(req, res) {
         .json({ ok: false, message: "Internal server error" });
     }
   } catch (e) {
-    console.log(e);
+    console.log("db error", e);
     return res
       .status(500)
       .json({ ok: false, message: "Internal server error" });
